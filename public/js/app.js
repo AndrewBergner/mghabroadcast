@@ -865,8 +865,11 @@ var app = new Vue({
         var _this = this;
 
         this.fetchMessages();
+        this.testMessage();
 
-        Echo.private('chat').listen('MessageSent', function (e) {
+        Echo.channel('chat').listen('MessageSent', function (e) {
+            console.log('received');
+
             _this.messages.push({
                 message: e.message.message,
                 user: e.user
@@ -889,6 +892,9 @@ var app = new Vue({
             axios.post('/messages', message).then(function (response) {
                 console.log(response.data);
             });
+        },
+        testMessage: function testMessage() {
+            console.log('test');
         }
     }
 });
