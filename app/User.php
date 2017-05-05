@@ -1,7 +1,14 @@
 <?php
 
 namespace App;
+
+
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+use App\Models\Role;
 use App\Models\Message;
+use App\Models\Permission;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -9,6 +16,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use EntrustUserTrait {
+        EntrustUserTrait::restore insteadof SoftDeletes;
+    }
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +30,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    /**
+     * The table this model uses.
+     */
+    protected $table = 'users';
     /**
      * The attributes that should be hidden for arrays.
      *

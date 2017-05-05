@@ -13,6 +13,8 @@
 </div>
 @endsection
 
+
+
 @push('script-foot')
     <script type="text/javascript" src="/js/broadcast.js"></script>
 @endpush
