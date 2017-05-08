@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\User;
+
 use App\Events\MessageSent;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -42,11 +44,30 @@ class ChatsController extends Controller
 	 */
 	public function sendMessage(Request $request)
 	{
-	  $user = Auth::user();
+	  // $user = Auth::user();
 
-	  $message = $user->messages()->create([
-	    'message' => $request->input('message')
-	  ]);
+		if (Auth::guest())
+		{
+			$user = User::find(2);
+		}
+		else
+		{
+			$user = Auth::user();
+		}
+
+		$message = new Message;
+
+		$message->message = $request->input('message');
+		$message->user_id = '2';
+
+		$message->save();
+
+		// $message = Message::create([
+		// 	'message' => $request->input('message')
+		// ]);
+	  // $message = $user->messages()->create([
+	  //   'message' => $request->input('message')
+	  // ]);
 
 	  broadcast(new MessageSent($user, $message))->toOthers();
 
