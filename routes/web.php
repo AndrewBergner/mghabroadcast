@@ -18,11 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/broadcast', 'HomeController@broadcast')->name('broadcast');
 
 Route::get('/chat', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
-Route::group(['middleware'=> ['web']], function(){
-	Route::get('/', 'BroadcastController@index');
-});
+// Route::group(['middleware'=> ['web']], function(){
+// 	Route::get('/', 'BroadcastController@index');
+// });
