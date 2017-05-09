@@ -36,6 +36,7 @@ const app = new Vue({
     data: {
         messages: [],
         test: 'HELLO',
+        counter:0
     },
 
     created() {
@@ -67,13 +68,7 @@ const app = new Vue({
             axios.post('/messages', message).then(response => {
               console.log(response.data);
             });
-        },
-
-        displayMessage(test){
-            alert(test);
-        },
-
-        
+        },     
 
     }
 });

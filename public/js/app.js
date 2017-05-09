@@ -860,7 +860,8 @@ var app = new Vue({
 
     data: {
         messages: [],
-        test: 'HELLO'
+        test: 'HELLO',
+        counter: 0
     },
 
     created: function created() {
@@ -893,9 +894,6 @@ var app = new Vue({
             axios.post('/messages', message).then(function (response) {
                 console.log(response.data);
             });
-        },
-        displayMessage: function displayMessage(test) {
-            alert(test);
         }
     }
 });
@@ -1835,7 +1833,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['messages']
+    props: ['messages', 'test', 'counter'],
+
+    methods: {
+        displayMessage: function displayMessage(message) {
+            console.log(message);
+        }
+    }
 
 });
 
@@ -36912,7 +36916,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "chat-body clearfix"
     }, [_c('div', {
       staticClass: "header"
-    }, [_c('strong', {
+    }, [_c('button', {
+      attrs: {
+        "id": "counter"
+      },
+      on: {
+        "click": function($event) {
+          _vm.displayMessage(message.message)
+        }
+      }
+    }, [_vm._v("Display")]), _vm._v(" "), _c('strong', {
       staticClass: "primary-font"
     }, [_vm._v("\n                    " + _vm._s(message.user.name) + " \n                ")])]), _vm._v(" "), _c('p', [_vm._v("\n                " + _vm._s(message.message) + "\n            ")])])])
   }))
