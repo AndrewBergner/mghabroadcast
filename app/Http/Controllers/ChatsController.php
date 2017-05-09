@@ -25,6 +25,12 @@ class ChatsController extends Controller
 	  return view('chat');
 	}
 
+	public function test()
+	{
+		return view('test');
+		
+	}
+
 	/**
 	 * Fetch all messages
 	 *

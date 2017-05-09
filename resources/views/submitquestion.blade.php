@@ -7,7 +7,6 @@
                 <div class="panel-footer">
                     <chat-form
                         v-on:messagesent="addMessage"
-                        :user="user"
                     ></chat-form>
                 </div>
             </div>

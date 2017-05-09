@@ -27,13 +27,15 @@ window.Vue = require('vue');
 
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
+Vue.component('test-message', require('./components/test.vue'));
 
 const app = new Vue({
     el: '#app',
 
 
     data: {
-        messages: []
+        messages: [],
+        test: 'HELLO',
     },
 
     created() {
@@ -66,6 +68,35 @@ const app = new Vue({
               console.log(response.data);
             });
         },
+
+        displayMessage(test){
+            alert(test);
+        },
+
+        
+
+    }
+});
+
+
+
+const app2 = new Vue({
+    el: '#app2',
+
+
+    data: {
+        message: "HELLO",
+    },
+
+
+    methods: {
+
+
+        displayMessage(test){
+            alert(test);
+        },
+
+        
 
     }
 });
