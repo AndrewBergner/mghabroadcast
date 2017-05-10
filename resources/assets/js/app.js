@@ -9,6 +9,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
 // *
 //  * Next, we will create a fresh Vue application instance and attach it to
 //  * the page. Then, you may begin adding components to this application
@@ -28,6 +29,7 @@ window.Vue = require('vue');
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
 Vue.component('test-message', require('./components/test.vue'));
+Vue.component('modal', require('./components/modal.vue'));
 
 const app = new Vue({
     el: '#app',
@@ -35,8 +37,8 @@ const app = new Vue({
 
     data: {
         messages: [],
-        test: 'HELLO',
-        counter:0
+        showModal: false,
+        modalmessage: 'pappy',
     },
 
     created() {
@@ -53,7 +55,11 @@ const app = new Vue({
         });    
     },
 
-
+    events: {
+      displaymessage: function(){
+        alert('test4');
+      }
+    },
 
     methods: {
         fetchMessages() {
@@ -68,30 +74,35 @@ const app = new Vue({
             axios.post('/messages', message).then(response => {
               console.log(response.data);
             });
-        },     
+        },
+
+        displaymessage(message){
+            alert(message);
+        }
 
     }
 });
 
 
 
-const app2 = new Vue({
-    el: '#app2',
+// const app2 = new Vue({
+//     el: '#app2',
 
 
-    data: {
-        message: "HELLO",
-    },
+//     data: {
+//         message: "HELLO",
+//     },
 
 
-    methods: {
+//     methods: {
 
 
-        displayMessage(test){
-            alert(test);
-        },
+//         ondisplaymsg2(){
+//             console.log('test3');
+//             alert('test2');
+//         },
 
         
 
-    }
-});
+//     }
+// });

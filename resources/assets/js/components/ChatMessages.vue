@@ -5,7 +5,7 @@
         <li class="left clearfix" v-for="message in messages">
             <div class="chat-body clearfix">
                 <div class="header">
-                    <button id='counter' v-on:click="displayMessage(message.message)">Display</button>
+                    <button id='modal-open' @click="displaymsg(message.message)">Display</button>
                     <strong class="primary-font">
                         {{ message.user.name }} 
                     </strong>
@@ -23,11 +23,12 @@
 
 <script>
   export default {
-    props: ['messages', 'test', 'counter'],
+    props: ['messages', 'modalmessage'],
 
     methods:{
-        displayMessage(message){
-            console.log(message);
+        displaymsg(message){
+
+            this.$emit('displaymsg', message);
         }
     }
 
