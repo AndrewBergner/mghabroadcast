@@ -77,7 +77,9 @@ const app = new Vue({
         },
 
         displaymessage(message){
-            alert(message);
+            this.modalmessage = message;
+            this.showModal = true;
+            // alert(message);
         }
 
     }

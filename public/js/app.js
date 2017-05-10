@@ -903,7 +903,9 @@ var app = new Vue({
             });
         },
         displaymessage: function displaymessage(message) {
-            alert(message);
+            this.modalmessage = message;
+            this.showModal = true;
+            // alert(message);
         }
     }
 });
@@ -1882,15 +1884,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['showModal', 'modalmessage'],
 
-  methods: {
-    displaymessage: function displaymessage() {
-      alert('test1');
-    },
-
-    mod: function mod() {
-      console.log('test2');
-    }
-  }
+  methods: {}
 
 });
 

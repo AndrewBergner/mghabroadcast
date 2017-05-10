@@ -15,13 +15,7 @@
 
     methods:
     {
-        displaymessage: function(){
-          alert('test1');
-        },
-
-        mod: function(){
-          console.log('test2');
-        }
+        
     },
 
 
