@@ -7,10 +7,10 @@
                 <div class="panel-heading">Questions</div>
 
                 <div class="panel-body">
-                    <chat-messages :messages="messages" @displaymsg="displaymessage"></chat-messages>
+                    <chat-messages :messages="messages" @displaymsg="displaymessage" @deletemsg="deletemessage"></chat-messages>
 
                 </div>
-                
+              
             </div>
         </div>
     </div>

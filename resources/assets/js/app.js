@@ -28,7 +28,7 @@ window.Vue = require('vue');
 
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
-Vue.component('test-message', require('./components/test.vue'));
+// Vue.component('test-message', require('./components/test.vue'));
 Vue.component('modal', require('./components/modal.vue'));
 
 const app = new Vue({
@@ -55,12 +55,6 @@ const app = new Vue({
         });    
     },
 
-    events: {
-      displaymessage: function(){
-        alert('test4');
-      }
-    },
-
     methods: {
         fetchMessages() {
             axios.get('/messages').then(response => {
@@ -80,7 +74,12 @@ const app = new Vue({
             this.modalmessage = message;
             this.showModal = true;
             // alert(message);
-        }
+        },
+
+
+        deletemessage(message, index){
+            this.messages.splice(index, 1);
+      }
 
     }
 });

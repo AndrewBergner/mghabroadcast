@@ -2,17 +2,19 @@
 
 <template>
     <ul class="chat">
-        <li class="left clearfix" v-for="message in messages">
+        <li class="left clearfix" v-for="(message, index) in messages">
             <div class="chat-body clearfix">
                 <div class="header">
                     <button id='modal-open' @click="displaymsg(message.message)">Display</button>
+                    <button id='modal-open' @click="deletemsg(message, index)">Delete</button>
                     <strong class="primary-font">
-                        {{ message.user.name }} 
+                         
                     </strong>
 
                 </div>
                 <p>
-                    {{ message.message }}
+                    {{message.message}}
+
                 </p>
             </div>
         </li>
@@ -25,11 +27,25 @@
   export default {
     props: ['messages', 'modalmessage'],
 
+
+    created() {
+
+
+    },
+
     methods:{
         displaymsg(message){
 
             this.$emit('displaymsg', message);
-        }
+        },
+
+        deletemsg(message, index){
+            this.$emit('deletemsg', message, index);
+
+
+        },
+
+
     }
 
   };
