@@ -902,11 +902,7 @@ var app = new Vue({
             // alert(message);
         },
         deletemessage: function deletemessage(message, index) {
-            console.log('triggered ' + index);
             this.messages.splice(index, 1);
-            // this.messages = this.messages.filter(function(message){
-            //     return message.id != message.id;
-            // });
         }
     }
 });
@@ -36899,7 +36895,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "modal-background"
   }), _vm._v(" "), _c('div', {
     staticClass: "modal-content"
-  }, [_c('h1', [_c('p', [_vm._v(_vm._s(_vm.modalmessage))])])]), _vm._v(" "), _c('button', {
+  }, [_c('p', {
+    staticClass: "modal-msg"
+  }, [_vm._v(_vm._s(_vm.modalmessage))])]), _vm._v(" "), _c('button', {
     staticClass: "modal-close",
     on: {
       "click": function($event) {
@@ -36931,6 +36929,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "header"
     }, [_c('button', {
+      staticClass: "btn-ctrl",
       attrs: {
         "id": "modal-open"
       },
@@ -36940,6 +36939,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Display")]), _vm._v(" "), _c('button', {
+      staticClass: "btn-ctrl",
       attrs: {
         "id": "modal-open"
       },
@@ -36950,7 +36950,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v("Delete")]), _vm._v(" "), _c('strong', {
       staticClass: "primary-font"
-    })]), _vm._v(" "), _c('p', [_vm._v("\n                " + _vm._s(message.message) + "\n\n            ")])])])
+    })]), _vm._v(" "), _c('p'), _c('h3', [_vm._v(_vm._s(message.message))])])])
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true

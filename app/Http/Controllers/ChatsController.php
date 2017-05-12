@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 
+use Carbon\Carbon;
+
 use App\Events\MessageSent;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -39,7 +41,7 @@ class ChatsController extends Controller
 	public function fetchMessages()
 	{
 
-	  return Message::with('user')->get();
+	  return Message::with('user')->whereDate('created_at', '>=', Carbon::today())->get();
 	}
 
 	/**

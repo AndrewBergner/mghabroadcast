@@ -5,15 +5,15 @@
         <li class="left clearfix" v-for="(message, index) in messages">
             <div class="chat-body clearfix">
                 <div class="header">
-                    <button id='modal-open' @click="displaymsg(message.message)">Display</button>
-                    <button id='modal-open' @click="deletemsg(message, index)">Delete</button>
+                    <button id='modal-open' class="btn-ctrl" @click="displaymsg(message.message)">Display</button>
+                    <button id='modal-open' class="btn-ctrl" @click="deletemsg(message, index)">Delete</button>
                     <strong class="primary-font">
                          
                     </strong>
 
                 </div>
                 <p>
-                    {{message.message}}
+                    <h3>{{message.message}}</h3
 
                 </p>
             </div>

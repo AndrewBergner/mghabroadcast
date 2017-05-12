@@ -1,0 +1,14 @@
+.btn-ctrl{
+	font-size: 14px;
+}
+
+.modal-content{
+	width: 75% !important;
+	padding-left: 10px;
+}
+
+.modal-msg{
+	font-size: 48px !important;
+	color: black;
+
+}

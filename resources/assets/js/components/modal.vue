@@ -3,7 +3,7 @@
     <div class="modal-background"></div>
 
     <div class="modal-content">
-      <h1><p>{{modalmessage}}</p></h1>
+      <p class="modal-msg">{{modalmessage}}</p>
     </div>
     <button class="modal-close" @click="$emit('close')"></button>
   </div>
