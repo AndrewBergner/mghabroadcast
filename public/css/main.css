@@ -12,3 +12,55 @@
 	color: black;
 
 }
+.broadcast-container{
+		display: -webkit-flex;
+		display:flex;
+		justify-content:flex-end;
+		-webkit-justify-content:flex-end;
+		justify-content: center;
+		width:100%;
+		height:auto;
+
+	}
+	.player-container{
+		width:100%
+		height:100%;
+		margin-bottom:10px;	
+	}
+
+@media screen and (min-width: 960px){
+	
+	.video-player{
+		width: 960px;
+		height:480px;
+	}
+
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 959px){
+	
+	.video-player{
+		width: 640px;
+		height:320px;
+	}
+
+	.questions-container{
+
+	}
+
+}
+
+
+@media screen and (min-width:320) and (max-width: 639px){
+
+	.video-player{
+		width: 320px;
+		height:160px;
+	}
+
+	.questions-container{
+		width:100%;
+		height:auto;
+	}
+}

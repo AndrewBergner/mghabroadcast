@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'broadcast']);
+        // $this->middleware('auth', ['except' => 'broadcast', 'index']);
     }
 
     /**
@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        return redirect('/broadcast');
     }
 
     public function broadcast()
