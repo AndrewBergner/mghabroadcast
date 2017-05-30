@@ -23,6 +23,7 @@
 </head>
 <body>
     <div id="app">
+    @role('site-admin')
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -80,6 +81,7 @@
                 </div>
             </div>
         </nav>
+        @endrole
 
         @yield('content')
         
