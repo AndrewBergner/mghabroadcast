@@ -13,7 +13,9 @@
 	    	@include('player')
 	    </div>
 </div>
-
+	<div class="broadcast-container">
+		<p class="help-tips">If the video does not start automatically, please click on the Play button located in the center of the player window or refresh the page.</p>
+	</div>
 <div class="broadcast-container">
 
 		<div class="questions-container">
