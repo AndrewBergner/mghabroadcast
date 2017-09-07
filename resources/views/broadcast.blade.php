@@ -4,7 +4,7 @@
 
 <div class="broadcast-container">
 	<div class="title">
-		<h3>MGH Virtual Grand Rounds</h3>
+		<h3>Massachusetts General Hospital Psychiatry Academy</h3>
 	</div>
 </div>
 
