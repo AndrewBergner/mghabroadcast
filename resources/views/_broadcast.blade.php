@@ -14,9 +14,26 @@
 	    </div>
 </div>
 	<div class="broadcast-container">
-	<h3>To ask a question, please navigate to the WebEx window and open the Q&A tab</h3>
-	<p>If the video does not start automatically, please click on the Play button located in the center of the player window or refresh the page.</p>
+		<p class="help-tips">If the video does not start automatically, please click on the Play button located in the center of the player window or refresh the page.</p>
 	</div>
+<div class="broadcast-container">
+
+		<div class="questions-container">
+
+		@include('submitquestion')
+		</div>
+
+</div>
+
+
+<div class="broadcast-container">
+		<div class="questions-container">
+
+		@role('site-admin')
+			@include('questions')
+		@endrole
+	</div>
+</div>
 @endsection
 
 
